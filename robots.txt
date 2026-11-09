@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.la-ferme-de-la-croix-blanche.fr/sitemap.xml
