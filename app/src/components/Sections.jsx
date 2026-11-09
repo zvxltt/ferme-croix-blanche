@@ -48,8 +48,8 @@ export function Ferme() {
         </div>
 
         <div className="stats">
-          <div className="stat rv"><b><span data-count="50">50</span></b><span>hectares de prairies</span></div>
-          <div className="stat rv d1"><b><span data-count="80">80</span></b><span>bovins élevés sur l'exploitation</span></div>
+          <div className="stat big rv"><b><span data-count="50">50</span></b><span>hectares de prairies</span></div>
+          <div className="stat big rv d1"><b><span data-count="80">80</span></b><span>bovins élevés sur l'exploitation</span></div>
           <div className="stat rv d2"><b>U<sup>+</sup></b><span>notation selon la grille Europa</span></div>
           <div className="stat rv d3"><b>A</b><span>classification de propreté</span></div>
         </div>

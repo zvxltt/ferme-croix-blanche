@@ -555,3 +555,11 @@ footer{background:var(--nuit);color:rgba(255,255,255,.6);overflow:hidden}
 /* Pas de zoom (double-tap ni pincement) */
 html,body{touch-action:pan-x pan-y}
 a,button,input,select,textarea,label{touch-action:manipulation}
+
+/* Chiffres clés mis en avant (hectares, bovins) */
+.stats{grid-template-columns:1.5fr 1.5fr 1fr 1fr}
+.stat.big b{font-size:clamp(5.4rem,10vw,9.5rem);line-height:.9}
+.stat.big > span{font-size:1.05rem;font-weight:600;color:var(--vert);max-width:16ch}
+@media (max-width:1060px){.stats{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.stat.big b{font-size:4.6rem}.stat.big > span{font-size:.98rem}}
+.stat b span{display:inline;margin:0;font-size:inherit;color:inherit;max-width:none}
