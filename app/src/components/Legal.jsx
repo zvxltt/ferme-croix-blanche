@@ -16,7 +16,7 @@ function Mentions() {
 
       <h2>Éditeur du site</h2>
       <dl>
-        <Ligne label="Nom commercial">{L.nom}</Ligne>
+        <Ligne label="Enseigne">{L.enseigne}</Ligne>
         <Ligne label="Société">{L.societe}</Ligne>
         <Ligne label="Forme juridique">{L.forme}</Ligne>
         <Ligne label="Capital social">{L.capital}</Ligne>
@@ -38,9 +38,13 @@ function Mentions() {
 
       <h2>Conception et réalisation</h2>
       <p>{L.conception}.</p>
+      {L.prestataireImages && <p>Certaines photographies sont actuellement diffusées depuis les serveurs de {L.prestataireImages}.</p>}
+
+      <h2>Conditions d'utilisation</h2>
+      <p>Le site est accessible à l'adresse la-ferme-de-la-croix-blanche.fr. Son utilisation implique l'acceptation des présentes mentions, qui peuvent être modifiées à tout moment. {L.societe} ne saurait être tenue pour responsable d'une mauvaise utilisation du site.</p>
 
       <h2>Propriété intellectuelle</h2>
-      <p>L'ensemble des contenus de ce site (textes, photographies, logo, mise en page) est la propriété de {L.societe} ou de ses partenaires et est protégé par le Code de la propriété intellectuelle. Toute reproduction, représentation ou diffusion, totale ou partielle, sans autorisation écrite préalable est interdite.</p>
+      <p>L'ensemble des contenus de ce site (textes, photographies, logo, mise en page) est la propriété de {L.societe} ou de ses partenaires et est protégé par le Code de la propriété intellectuelle. Toute reproduction, représentation ou diffusion, totale ou partielle, sans autorisation écrite préalable est interdite. Les photographies sont non contractuelles.</p>
 
       <h2>Tarifs et commandes</h2>
       <p>Les prix affichés sur le site sont indiqués en euros, toutes taxes comprises (TTC), au kilogramme. Ils sont donnés à titre indicatif : le prix définitif dépend du poids réel des morceaux, pesés lors de la vente à la ferme. Le site ne permet pas de payer en ligne : la liste de commande et le formulaire servent uniquement à transmettre une demande, confirmée ensuite par la ferme. La vente est conclue et réglée sur place, lors des ventes à la ferme.</p>
@@ -53,13 +57,13 @@ function Mentions() {
       )}
 
       <h2>Responsabilité</h2>
-      <p>{L.societe} s'efforce de fournir des informations exactes et à jour (dates de vente, tarifs, disponibilités), mais ne peut garantir l'absence d'erreur. Les dates et les prix sont susceptibles d'évoluer ; en cas de doute, n'hésitez pas à nous appeler. Les liens vers d'autres sites sont fournis à titre pratique et n'engagent pas la responsabilité de {L.societe}.</p>
+      <p>{L.societe} s'efforce de fournir des informations exactes et à jour (dates de vente, tarifs, disponibilités), mais ne peut garantir l'absence d'erreur. Les dates et les prix sont susceptibles d'évoluer ; en cas de doute, n'hésitez pas à nous appeler. Si vous constatez une erreur ou un dysfonctionnement, merci de nous le signaler à <Mail />. Les liens vers d'autres sites sont fournis à titre pratique et n'engagent pas la responsabilité de {L.societe}.</p>
 
       <h2>Données personnelles</h2>
       <p>Le traitement de vos données est décrit dans notre <a href="confidentialite.html">politique de confidentialité</a>.</p>
 
-      <h2>Droit applicable</h2>
-      <p>Les présentes mentions sont soumises au droit français.</p>
+      <h2>Droit applicable et litiges</h2>
+      <p>Les présentes mentions sont régies par le droit français. Tout litige relatif à leur interprétation ou à leur exécution relève de la compétence des tribunaux français. La langue de référence est le français.</p>
     </>
   )
 }
@@ -84,12 +88,12 @@ function Confidentialite() {
       </ul>
 
       <h2>Destinataires</h2>
-      <p>Vos données sont destinées uniquement à {L.societe}. Elles transitent par notre hébergeur ({L.hebergeur.nom}, situé dans l'Union européenne) pour l'envoi du message. Elles ne sont jamais vendues, louées ni cédées à des tiers.</p>
+      <p>Vos données sont destinées uniquement à {L.societe}. Elles transitent par notre hébergeur ({L.hebergeur.nom}, situé dans l'Union européenne) pour l'envoi du message. Elles ne sont jamais vendues, louées ni cédées à des tiers, et ne sont jamais utilisées pour de la publicité de partenaires. Elles peuvent uniquement être communiquées aux autorités judiciaires sur réquisition, conformément à la loi.</p>
 
       <h2>Durée de conservation</h2>
       <ul>
-        <li>Demandes et commandes : le temps nécessaire à leur traitement, puis au maximum 3 ans après notre dernier échange.</li>
-        <li>Informations sur les ventes (si vous y avez consenti) : jusqu'à votre désinscription, et au maximum 3 ans sans contact de votre part.</li>
+        <li>Demandes et commandes : 2 ans à compter de notre dernier échange.</li>
+        <li>Informations sur les ventes (si vous y avez consenti) : jusqu'à votre désinscription, et au maximum 2 ans sans contact de votre part.</li>
         <li>Journaux techniques du serveur : 12 mois au maximum.</li>
       </ul>
 
@@ -99,10 +103,10 @@ function Confidentialite() {
         <li>le <b>stockage local de votre navigateur</b> conserve votre liste de commande sur votre appareil, pour que vous la retrouviez en revenant ; elle n'est jamais transmise sans que vous envoyiez le formulaire, et vous pouvez la vider à tout moment depuis « Ma liste » ;</li>
         <li>un <b>cookie de session</b> technique peut être déposé lors de l'envoi du formulaire pour limiter les envois abusifs ; il est supprimé à la fermeture du navigateur.</li>
       </ul>
-      <p>Les photographies sont chargées depuis un service de stockage situé en France (Amazon Web Services, région Paris), qui reçoit à cette occasion l'adresse IP technique de votre appareil.</p>
+      <p>Les photographies sont chargées depuis un service de stockage situé en France (Amazon Web Services, région Paris), qui reçoit à cette occasion l'adresse IP technique de votre appareil{L.prestataireImages ? ` ; ces images sont pour l'instant diffusées par notre ancien prestataire, ${L.prestataireImages}` : ''}.</p>
 
       <h2>Vos droits</h2>
-      <p>Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité de vos données, ainsi que du droit de retirer votre consentement à tout moment et de définir des directives sur le sort de vos données après votre décès. Pour les exercer, écrivez-nous à <Mail /> ou par courrier à {L.siege}. Nous vous répondons dans un délai d'un mois.</p>
+      <p>Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité de vos données, ainsi que du droit de retirer votre consentement à tout moment et de définir des directives sur le sort de vos données après votre décès. Pour les exercer, écrivez-nous à <Mail /> ou par courrier à {L.societe}, {L.siege}. Nous pourrons vous demander un justificatif d'identité avant de répondre. Nous vous répondons dans un délai d'un mois.</p>
       <p>Si vous estimez, après nous avoir contactés, que vos droits ne sont pas respectés, vous pouvez adresser une réclamation à la CNIL (<a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr</a>).</p>
 
       <h2>Sécurité</h2>

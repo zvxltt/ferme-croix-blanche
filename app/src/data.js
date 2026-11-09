@@ -37,14 +37,15 @@ export const LEGAL = {
   nom: 'La Ferme de la Croix Blanche',
   societe: 'SCEA ROSENTRITT',
   forme: "Société civile d'exploitation agricole (SCEA)",
-  capital: null,                 // ex. '15 000 €'
-  siege: '983 rue de la Croix Blanche, 78440 Drocourt, France',
+  capital: null,                 // non renseigné sur l'ancien site ; ex. '15 000 €'
+  siege: '983 route départementale La Croix Blanche, 78440 Drocourt, France',
   siren: '341 214 856',
   siret: '341 214 856 00021',
   rcs: 'RCS Versailles 341 214 856',
-  tva: null,                     // n° de TVA intracommunautaire, si la société y est assujettie
+  tva: 'FR88341214856',
   naf: '01.42Z – Élevage d’autres bovins et de buffles',
   directeur: 'Marie-Sophie Rosentritt, gérante',
+  enseigne: 'La Ferme de la Croix Blanche',
   email: 'contact@la-ferme-de-la-croix-blanche.fr',
   telephone: '06 80 68 11 05',
   hebergeur: {
@@ -53,6 +54,8 @@ export const LEGAL = {
     site: 'https://www.hostinger.fr',
   },
   conception: 'Valentin Devilaine',
+  // Les photos sont encore servies par l'ancien prestataire (à retirer une fois les images hébergées avec le site)
+  prestataireImages: 'Local.fr, SAS, 8 rue de l’Est, 92100 Boulogne-Billancourt',
   mediateur: null,               // { nom: '…', site: 'https://…' } : médiateur de la consommation
   majLe: '9 novembre 2026',
 }
