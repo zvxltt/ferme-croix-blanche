@@ -30,3 +30,29 @@ export const CARROUSEL = [
 ]
 
 export const VILLES = ["Maulette","Thoiry","Bazainville","Aincourt","Arthies","Wy-dit-Joli-Village","Jambville","Gargenville","Fontenay-Saint-Père","Mantes-la-Jolie","Mantes-la-Ville","Follainville-Dennemont","Rosny-sur-Seine","Gasny"]
+
+// Informations légales (mentions légales et politique de confidentialité)
+// Laisser à null ce qui n'est pas connu : la ligne correspondante n'est pas affichée.
+export const LEGAL = {
+  nom: 'La Ferme de la Croix Blanche',
+  societe: 'SCEA ROSENTRITT',
+  forme: "Société civile d'exploitation agricole (SCEA)",
+  capital: null,                 // ex. '15 000 €'
+  siege: '983 rue de la Croix Blanche, 78440 Drocourt, France',
+  siren: '341 214 856',
+  siret: '341 214 856 00021',
+  rcs: 'RCS Versailles 341 214 856',
+  tva: null,                     // n° de TVA intracommunautaire, si la société y est assujettie
+  naf: '01.42Z – Élevage d’autres bovins et de buffles',
+  directeur: 'Marie-Sophie Rosentritt, gérante',
+  email: 'contact@la-ferme-de-la-croix-blanche.fr',
+  telephone: '06 80 68 11 05',
+  hebergeur: {
+    nom: 'Hostinger International Ltd',
+    adresse: '61 Lordou Vironos Street, 6023 Larnaca, Chypre',
+    site: 'https://www.hostinger.fr',
+  },
+  conception: 'Valentin Devilaine',
+  mediateur: null,               // { nom: '…', site: 'https://…' } : médiateur de la consommation
+  majLe: '9 novembre 2026',
+}

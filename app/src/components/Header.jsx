@@ -25,7 +25,7 @@ export default function Header() {
           <ul className="nav">
             {LIENS.map(([h, l]) => <li key={h}><a href={h}>{l}</a></li>)}
           </ul>
-          <a className="btn" href="#commander">Commander<Arrow /></a>
+          <a className="btn" href="#tarifs">Commander<Arrow /></a>
           <button
             className="burger" type="button"
             aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}

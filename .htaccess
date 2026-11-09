@@ -9,6 +9,8 @@ RewriteRule ^nos-viandes-de-haute-qualite/?$ /#viandes [NE,R=301,L]
 RewriteRule ^nos-ventes-au-detail/?$ /#ventes [NE,R=301,L]
 RewriteRule ^pension-familiale-de-chevaux/?$ /#pension [NE,R=301,L]
 RewriteRule ^commander/?$ /#commander [NE,R=301,L]
+RewriteRule ^mentions-legales/?$ /mentions-legales.html [R=301,L]
+RewriteRule ^politique-de-confidentialite/?$ /confidentialite.html [R=301,L]
 
 ErrorDocument 404 /404.html
 Options -Indexes

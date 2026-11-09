@@ -12,5 +12,12 @@ export default defineConfig({
     outDir: fileURLToPath(new URL('./dist', import.meta.url)),
     emptyOutDir: true,
     assetsDir: 'assets',
+    rollupOptions: {
+      input: {
+        main: fileURLToPath(new URL('./app/index.html', import.meta.url)),
+        mentions: fileURLToPath(new URL('./app/mentions-legales.html', import.meta.url)),
+        confidentialite: fileURLToPath(new URL('./app/confidentialite.html', import.meta.url)),
+      },
+    },
   },
 })

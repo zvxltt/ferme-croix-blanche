@@ -3,7 +3,7 @@ import { FACEBOOK, MAPS, TEL, TEL_HREF } from '../data'
 import { ITEMS, useSite } from '../store'
 import { CartIcon, HomeIcon, PhoneIcon } from '../icons'
 
-export function Footer() {
+export function Footer({ base = '' }) {
   return (
     <footer>
       <div className="wrap">
@@ -12,11 +12,11 @@ export function Footer() {
             <h4>La Ferme de la Croix Blanche</h4>
             <p style={{ color: 'rgba(255,255,255,.6)' }}>Exploitation familiale à Drocourt. Vente directe de viandes et d'œufs fermiers, pension familiale de chevaux.</p>
           </div>
-          <nav><h4>Navigation</h4><a href="#ferme">La ferme</a><a href="#viandes">Nos viandes</a><a href="#ventes">Ventes &amp; tarifs</a><a href="#pension">Pension chevaux</a></nav>
+          <nav><h4>Navigation</h4><a href={base + '#ferme'}>La ferme</a><a href={base + '#viandes'}>Nos viandes</a><a href={base + '#tarifs'}>Ventes &amp; tarifs</a><a href={base + '#pension'}>Pension chevaux</a></nav>
           <nav><h4>Contact</h4><a href={TEL_HREF}>{TEL}</a><a href={FACEBOOK} target="_blank" rel="noopener">Facebook</a><a href={MAPS} target="_blank" rel="noopener">Google Maps</a></nav>
         </div>
         <div className="word" aria-hidden="true">Croix <em>Blanche</em></div>
-        <div className="legal"><span>© {new Date().getFullYear()} La Ferme de la Croix Blanche · SCEA Rosentritt</span><a href="#">Mentions légales &amp; RGPD</a></div>
+        <div className="legal"><span>© {new Date().getFullYear()} La Ferme de la Croix Blanche · SCEA Rosentritt</span><span className="legal-links"><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a></span></div>
       </div>
     </footer>
   )
@@ -41,8 +41,8 @@ export function AppBar() {
     <nav className="appbar" id="callbar" aria-label="Navigation rapide">
       <a href="#accueil" data-s="0"><HomeIcon /><span>Accueil</span></a>
       {count > 0
-        ? <button type="button" data-s="5" onClick={() => setSheetOpen(true)}><CartIcon /><span>Ma liste</span><Count n={count} /></button>
-        : <a href="#commander" data-s="5"><CartIcon /><span>Commander</span></a>}
+        ? <button type="button" data-s="3" onClick={() => setSheetOpen(true)}><CartIcon /><span>Ma liste</span><Count n={count} /></button>
+        : <a href="#tarifs" data-s="3"><CartIcon /><span>Commander</span></a>}
       <a href={TEL_HREF} className="call" aria-label={`Appeler la ferme au ${TEL}`}><i><PhoneIcon /></i><span>Appeler</span></a>
     </nav>
   )

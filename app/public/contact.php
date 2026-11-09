@@ -8,7 +8,7 @@
  *  - EXPEDITEUR : une adresse du domaine créée dans Hostinger (ex. site@la-ferme-de-la-croix-blanche.fr),
  *    sinon les e-mails risquent d'arriver dans les spams.
  */
-const DESTINATAIRE = 'contact@la-ferme-de-la-croix-blanche.fr';
+const DESTINATAIRE = 'contact@la-ferme-de-la-croix-blanche.fr'; // adresse de la ferme
 const EXPEDITEUR   = 'site@la-ferme-de-la-croix-blanche.fr';
 const NOM_SITE     = 'La Ferme de la Croix Blanche';
 
@@ -44,7 +44,7 @@ $email     = $propre($_POST['email'] ?? '', 160);
 $objet     = $propre($_POST['objet'] ?? 'Demande depuis le site', 120);
 $message   = trim(mb_substr((string)($_POST['message'] ?? ''), 0, 5000));
 $liste     = trim(mb_substr((string)($_POST['liste'] ?? ''), 0, 3000));
-$rgpd      = !empty($_POST['rgpd']);
+$infos     = !empty($_POST['infos_ventes']);
 
 if ($nom === '' || $message === '') {
     repondre(false, 'Merci d\'indiquer votre nom et votre message', 422);
@@ -52,16 +52,14 @@ if ($nom === '' || $message === '') {
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     repondre(false, 'L\'adresse e-mail n\'est pas valide', 422);
 }
-if (!$rgpd) {
-    repondre(false, 'Merci d\'accepter la politique de confidentialité', 422);
-}
 
 $corps  = "Nouvelle demande depuis le site " . NOM_SITE . "\n";
 $corps .= str_repeat('-', 40) . "\n\n";
 $corps .= "Nom : $nom\n";
 $corps .= "E-mail : $email\n";
 $corps .= "Téléphone : " . ($telephone !== '' ? $telephone : 'non renseigné') . "\n";
-$corps .= "Objet : $objet\n\n";
+$corps .= "Objet : $objet\n";
+$corps .= "Accepte de recevoir les dates de vente : " . ($infos ? 'OUI' : 'non') . "\n\n";
 $corps .= "Message :\n$message\n";
 if ($liste !== '' && mb_strpos($message, $liste) === false) {
     $corps .= "\nListe de commande :\n$liste\n";

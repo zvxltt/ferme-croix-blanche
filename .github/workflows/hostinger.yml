@@ -28,7 +28,7 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-          git add -A index.html assets 404.html contact.php .htaccess robots.txt sitemap.xml .nojekyll
+          git add -A index.html mentions-legales.html confidentialite.html assets 404.html contact.php .htaccess robots.txt sitemap.xml .nojekyll
           git diff --cached --quiet || (git commit -qm "Site compilé [skip ci]" && git push)
       - name: Publier aussi sur la branche hostinger
         run: |

@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App'
+import './fonts.css'
 import './styles.css'
 
 // Bloque le zoom : pincement (Safari ignore user-scalable=no) et double-tap

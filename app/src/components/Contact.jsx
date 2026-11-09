@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useSite } from '../store'
-import { FACEBOOK, LOGO, MAPS, TEL, TEL_HREF } from '../data'
+import { FACEBOOK, LEGAL, LOGO, MAPS, TEL, TEL_HREF } from '../data'
 import { Arrow, Check } from '../icons'
 
 const OBJETS = ['Une commande de viande', 'La pension pour chevaux', 'Une visite de la ferme', 'Autre chose']
@@ -64,10 +64,11 @@ export default function Contact() {
               <textarea id="msg" name="message" placeholder=" " required value={message} onChange={(e) => setMessage(e.target.value)} />
               <label htmlFor="msg">Votre message</label>
             </div>
-            <label className="chk" htmlFor="rgpd">
-              <input id="rgpd" name="rgpd" type="checkbox" required />
-              J'ai pris connaissance de la politique de gestion des données personnelles décrite dans la politique de confidentialité et j'autorise SCEA ROSENTRITT à m'envoyer des informations sur ses produits et services.
+            <label className="chk" htmlFor="infos">
+              <input id="infos" name="infos_ventes" type="checkbox" value="oui" />
+              J'accepte de recevoir par e-mail les dates des prochaines ventes de la ferme (facultatif, désinscription à tout moment).
             </label>
+            <p className="rgpd-note">Vos informations servent uniquement à {LEGAL.societe} pour répondre à votre demande et préparer votre commande. Elles ne sont jamais cédées à des tiers. Vous pouvez y accéder, les rectifier ou les faire supprimer en écrivant à {LEGAL.email}. En savoir plus : <a href="confidentialite.html">politique de confidentialité</a>.</p>
             <div>
               <button className="btn dark" type="submit" disabled={state.sending} style={state.sending ? { opacity: 0.6 } : undefined}>
                 {state.sending ? 'Envoi…' : 'Envoyer ma demande'}<Arrow />

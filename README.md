@@ -18,7 +18,8 @@ Le **code source** est dans `app/`. La **version compilée**, prête à servir, 
 
 | Emplacement | Contenu |
 |---|---|
-| `app/src/data.js` | **Dates de vente, tarifs, carrousel, villes** : c'est ici qu'on met à jour le site |
+| `app/src/data.js` | **Dates de vente, tarifs, carrousel, villes, informations légales (`LEGAL`)** : c'est ici qu'on met à jour le site |
+| `app/mentions-legales.html`, `app/confidentialite.html` | Pages légales (contenu dans `app/src/components/Legal.jsx`) |
 | `app/src/components/` | Les sections du site (accueil, ferme, viandes, ventes et tarifs, pension, contact…) |
 | `app/src/components/FeatureCarousel.jsx` | Le carrousel des produits (animations `motion`) |
 | `app/src/store.jsx` | La liste de commande, le panneau, les messages |

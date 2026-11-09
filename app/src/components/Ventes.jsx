@@ -140,7 +140,7 @@ function Tarifs() {
           <p className="empty">Aucun morceau ne correspond à « {q} ». Appelez-nous au {TEL}, nous avons peut-être ce que vous cherchez.</p>
         )}
       </div>
-      <p className="note">Prix au kilo, indicatifs. Le poids exact est pesé à la vente. Joues et foie de porc sur commande.</p>
+      <p className="note">Prix TTC au kilo, indicatifs : le prix final dépend du poids pesé à la vente. Joues et foie de porc sur commande.</p>
     </>
   )
 }
@@ -160,7 +160,7 @@ export function Viandes() {
         <div className="eggs rv">
           <svg viewBox="0 0 46 46" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><path d="M23 4c8 0 15 13 15 22a15 15 0 0 1-30 0C8 17 15 4 23 4z" /><path d="M16 27a7 7 0 0 0 7 7" strokeLinecap="round" /></svg>
           <div><h3>Œufs fermiers</h3><p>À la texture parfaite, de poules élevées en plein air. Choisissez nos produits de qualité et préparez des plats savoureux.</p></div>
-          <a className="btn ghost-d" href="#commander">Commander</a>
+          <a className="btn ghost-d" href="#commander">Nous les demander</a>
         </div>
       </div>
     </section>
