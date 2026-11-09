@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { FACEBOOK, MAPS, TEL, TEL_HREF } from '../data'
 import { ITEMS, useSite } from '../store'
-import { BagIcon, BeefIcon, ChatIcon, HomeIcon, PhoneIcon, TagIcon } from '../icons'
+import { CartIcon, HomeIcon, PhoneIcon } from '../icons'
 
 export function Footer() {
   return (
@@ -40,11 +40,9 @@ export function AppBar() {
   return (
     <nav className="appbar" id="callbar" aria-label="Navigation rapide">
       <a href="#accueil" data-s="0"><HomeIcon /><span>Accueil</span></a>
-      <a href="#viandes" data-s="2"><BeefIcon size={23} /><span>Viandes</span></a>
-      <a href="#tarifs" data-s="3"><TagIcon /><span>Tarifs</span></a>
       {count > 0
-        ? <button type="button" data-s="5" onClick={() => setSheetOpen(true)}><BagIcon /><span>Ma liste</span><Count n={count} /></button>
-        : <a href="#commander" data-s="5"><ChatIcon /><span>Commander</span></a>}
+        ? <button type="button" data-s="5" onClick={() => setSheetOpen(true)}><CartIcon /><span>Ma liste</span><Count n={count} /></button>
+        : <a href="#commander" data-s="5"><CartIcon /><span>Commander</span></a>}
       <a href={TEL_HREF} className="call" aria-label={`Appeler la ferme au ${TEL}`}><i><PhoneIcon /></i><span>Appeler</span></a>
     </nav>
   )

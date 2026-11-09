@@ -465,7 +465,7 @@ footer{background:var(--nuit);color:rgba(255,255,255,.6);overflow:hidden}
   .foot-top{padding-top:64px}
   .legal{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
   /* Barre d'application */
-  .appbar{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:0;right:0;bottom:0;z-index:50;padding:6px max(6px,env(safe-area-inset-right)) calc(6px + env(safe-area-inset-bottom)) max(6px,env(safe-area-inset-left));background:rgba(255,255,255,.94);backdrop-filter:saturate(1.5) blur(18px);-webkit-backdrop-filter:saturate(1.5) blur(18px);box-shadow:0 -1px 0 rgba(0,0,0,.07);transform:translateY(110%);transition:transform .6s var(--ease)}
+  .appbar{display:grid;grid-template-columns:repeat(3,1fr);position:fixed;left:0;right:0;bottom:0;z-index:50;padding:6px max(6px,env(safe-area-inset-right)) calc(6px + env(safe-area-inset-bottom)) max(6px,env(safe-area-inset-left));background:rgba(255,255,255,.94);backdrop-filter:saturate(1.5) blur(18px);-webkit-backdrop-filter:saturate(1.5) blur(18px);box-shadow:0 -1px 0 rgba(0,0,0,.07);transform:translateY(110%);transition:transform .6s var(--ease)}
   .ready .appbar{transform:none}
   .menu-open .appbar{transform:translateY(110%)}
   .appbar a,.appbar button{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:54px;border:0;background:none;border-radius:14px;color:var(--gris);text-decoration:none;font:600 .66rem var(--sans);letter-spacing:.02em;cursor:pointer;transition:color .3s,background .3s}
@@ -551,3 +551,7 @@ footer{background:var(--nuit);color:rgba(255,255,255,.6);overflow:hidden}
 .fc-chip,.fc-card{transition:none}
 .fc-cap{opacity:1;transform:none;transition:none}
 .timeline ol li{list-style:none}
+
+/* Pas de zoom (double-tap ni pincement) */
+html,body{touch-action:pan-x pan-y}
+a,button,input,select,textarea,label{touch-action:manipulation}

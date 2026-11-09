@@ -38,6 +38,7 @@ export const Search = (p) => (
 
 export const HomeIcon = (p) => <Svg sw={1.7} {...p}><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z" /></Svg>
 export const TagIcon = (p) => <Svg sw={1.7} {...p}><path d="M20 12l-8 8-9-9V3h8z" /><circle cx="7.5" cy="7.5" r="1.5" /></Svg>
+export const CartIcon = (p) => <Svg sw={1.7} {...p}><circle cx="9" cy="20" r="1.4" /><circle cx="18" cy="20" r="1.4" /><path d="M2.5 3h2.6l2.3 11.2a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.1L21 7H6" /></Svg>
 export const ChatIcon = (p) => <Svg sw={1.7} {...p}><path d="M4 5h16v12H8l-4 3z" /></Svg>
 export const BagIcon = (p) => <Svg sw={1.7} {...p}><path d="M5 8h14l-1 12H6z" /><path d="M9 8V6a3 3 0 0 1 6 0v2" /></Svg>
 export const PhoneIcon = (p) => <Svg sw={1.7} {...p}><path d="M5 3h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 12l5 2v3a2 2 0 0 1-2 2A15 15 0 0 1 3 5a2 2 0 0 1 2-2z" /></Svg>
