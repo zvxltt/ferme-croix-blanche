@@ -1,5 +1,5 @@
 import { LEGAL as L, LOGO } from '../data'
-import { FooterVisit } from './Place'
+import { Footer } from './Chrome'
 
 function Ligne({ label, children }) {
   if (!children) return null
@@ -118,17 +118,16 @@ function Confidentialite() {
 export default function LegalPage({ page }) {
   return (
     <>
-      <a className="skip" href="#contenu">Aller au contenu</a>
-      <header className="nav lg-head">
-        <div className="wrap nav__row">
-          <a className="nav__name" href="./" aria-label="Retour à l'accueil de La Ferme de la Croix Blanche">
-            <img src={LOGO} alt="" width="40" height="40" />
-            <span>La Croix Blanche</span>
+      <header className="lg-head">
+        <div className="wrap">
+          <a className="brand" href="./" aria-label="Retour à l'accueil">
+            <img src={LOGO} alt="Logo La Ferme de la Croix Blanche" />
+            <span><b>La Croix Blanche</b><small>Ferme à Drocourt</small></span>
           </a>
-          <a className="btn btn--secondary" href="./">Retour au site</a>
+          <a className="btn ghost-d" href="./">Retour au site</a>
         </div>
       </header>
-      <main className="lg" id="contenu">
+      <main className="lg">
         <div className="wrap">
           <article className="lg-body">
             {page === 'mentions' ? <Mentions /> : <Confidentialite />}
@@ -136,7 +135,7 @@ export default function LegalPage({ page }) {
           </article>
         </div>
       </main>
-      <FooterVisit base="./" />
+      <Footer base="./" />
     </>
   )
 }

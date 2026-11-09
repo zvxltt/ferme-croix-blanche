@@ -96,7 +96,7 @@ export function SiteProvider({ children }) {
     setMessage((m) => (!m.trim() || m.startsWith('Bonjour, je souhaite commander') ? txt : m))
     setTimeout(() => {
       document.getElementById('commander')?.scrollIntoView({ behavior: 'smooth' })
-      setTimeout(() => document.getElementById('message')?.focus({ preventScroll: true }), 700)
+      setTimeout(() => document.getElementById('msg')?.focus({ preventScroll: true }), 700)
     }, 50)
   }, [listText])
 
