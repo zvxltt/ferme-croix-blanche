@@ -590,3 +590,8 @@ a,button,input,select,textarea,label{touch-action:manipulation}
 .lg-row dd{margin:0;color:var(--texte);font-weight:500;min-width:0;overflow-wrap:anywhere}
 .lg-maj{margin-top:48px;font-size:.85rem;color:var(--gris)!important}
 @media (max-width:620px){.lg-row{grid-template-columns:1fr}.lg-head .brand span{display:none}}
+
+/* Toujours les couleurs du site, même si le téléphone est en mode sombre */
+:root{color-scheme:only light}
+html{background:#ffffff;forced-color-adjust:none}
+input,select,textarea,button{color-scheme:only light}
