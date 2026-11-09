@@ -113,12 +113,12 @@ header.solid .burger i,.menu-open .burger i{background:var(--vert)}
 .drawer .foot p{font-size:.9rem}
 
 /* Accueil */
-.hero{position:relative;height:100vh;height:100svh;min-height:620px;max-height:1000px;color:#fff;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end}
+.hero{position:relative;min-height:100vh;min-height:100svh;color:#fff;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end}
 .hero-media{position:absolute;inset:-8% 0 0;z-index:-2;will-change:transform}
 .hero-media div{position:absolute;inset:0;background:var(--vert) url("https://local-fr-public.s3.eu-west-3.amazonaws.com/prod/webtool/userfiles/115601/Bandeau/frame2.webp") center/cover;transform:scale(1.18);transition:transform 2.8s var(--ease)}
 .ready .hero-media div{transform:scale(1.04)}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,22,14,.6) 0%,rgba(10,22,14,.15) 35%,rgba(10,22,14,.35) 60%,rgba(10,22,14,.92) 100%)}
-.hero .wrap{width:100%;padding-block:0 40px}
+.hero .wrap{width:100%;padding-block:calc(130px + env(safe-area-inset-top)) 40px}
 .hero h1{font-size:clamp(3.4rem,10.5vw,9.6rem);line-height:.92;letter-spacing:-.025em;max-width:11ch}
 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
 .w>span{display:inline-block;transform:translateY(110%);transition:transform 1.3s var(--ease)}
@@ -496,7 +496,6 @@ footer{background:var(--nuit);color:rgba(255,255,255,.6);overflow:hidden}
   .cd div{min-width:0;padding:10px 4px}
   .cd b{font-size:1.6rem}
   .next-card .big{font-size:2.3rem}
-  .hero{min-height:560px}
   .hero-row p{font-size:1rem}
   .word{font-size:17vw}
   .hero h1{font-size:clamp(3rem,15vw,4.4rem)}
