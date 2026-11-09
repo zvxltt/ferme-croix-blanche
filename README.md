@@ -1,43 +1,54 @@
 # La Ferme de la Croix Blanche – site web
 
-Site vitrine de la Ferme de la Croix Blanche (Drocourt, 78), prêt pour un hébergement Hostinger.
+Site de la Ferme de la Croix Blanche (Drocourt, 78), en **React + Vite** (JavaScript).
 
-## Contenu
+## Développer
 
-| Fichier | Rôle |
+```bash
+npm install
+npm run dev       # site en local sur http://localhost:5173
+npm run build     # version de production dans dist/
+npm run preview   # tester la version de production
+```
+
+## Organisation
+
+| Emplacement | Contenu |
 |---|---|
-| `index.html` | La page du site |
-| `assets/css/style.css` | La mise en forme |
-| `assets/js/main.js` | Les animations, les tarifs, la liste de commande, l'envoi du formulaire |
-| `contact.php` | Envoie les demandes du formulaire par e-mail |
-| `.htaccess` | HTTPS forcé, redirection des anciennes pages, cache, page 404 |
-| `404.html` | Page « introuvable » |
-| `robots.txt`, `sitemap.xml` | Référencement Google |
+| `src/data.js` | **Dates de vente, tarifs, carrousel, villes** : c'est ici qu'on met à jour le site |
+| `src/components/` | Les sections du site (accueil, ferme, viandes, ventes et tarifs, pension, contact…) |
+| `src/components/FeatureCarousel.jsx` | Le carrousel des produits (animations `motion`) |
+| `src/store.jsx` | La liste de commande, le panneau, les messages |
+| `src/hooks/useScrollFx.js` | Les animations au défilement |
+| `src/icons.jsx` | Les icônes (dont l'icône de viande) |
+| `src/styles.css` | La mise en forme |
+| `public/` | Copié tel quel dans le site : `contact.php`, `.htaccess`, `404.html`, `robots.txt`, `sitemap.xml` |
 
 ## Mise en ligne sur Hostinger
 
-1. **Régler l'e-mail du formulaire.** Ouvrir `contact.php` et modifier en haut :
-   - `DESTINATAIRE` : l'adresse qui reçoit les demandes (celle de la ferme) ;
-   - `EXPEDITEUR` : une adresse du domaine créée dans hPanel → *E-mails* (par exemple `site@la-ferme-de-la-croix-blanche.fr`). Sans adresse du domaine, les messages risquent d'arriver en spam.
-2. **Téléverser les fichiers.** Dans hPanel → *Sites web* → *Gestionnaire de fichiers*, ouvrir `public_html`, supprimer le fichier `default.php` s'il existe, puis téléverser `site-ferme-croix-blanche.zip` et choisir *Extraire*. Les fichiers doivent être directement dans `public_html` (pas dans un sous-dossier).
-   - Les fichiers commençant par un point (`.htaccess`) sont parfois masqués : activer « Afficher les fichiers cachés » pour vérifier qu'il est présent.
-3. **Activer le SSL.** hPanel → *Sécurité* → *SSL* → installer le certificat gratuit. Le `.htaccess` redirige ensuite tout vers `https://www.`.
-4. **Pointer le domaine.** Si le domaine est encore chez Local.fr, remplacer ses serveurs DNS par ceux indiqués par Hostinger (propagation jusqu'à 24 h).
-5. **Tester** : envoyer une demande depuis le formulaire et vérifier sa réception.
+**Avant tout :** dans `public/contact.php`, remplacer `DESTINATAIRE` (adresse de la ferme qui reçoit les demandes) et `EXPEDITEUR` (une adresse du domaine créée dans hPanel → E-mails).
 
-> Si le site est installé sur un domaine sans `www`, modifier la première règle du `.htaccess` en conséquence.
+### Option A – Déploiement automatique depuis GitHub (recommandé)
+
+À chaque modification de `main`, GitHub compile le site et le publie sur la branche **`hostinger`** (voir l'onglet *Actions* du dépôt).
+
+1. hPanel → *Sites web* → *Gérer* → *Avancé* → **GIT**.
+2. Dépôt : `https://github.com/zvxltt/ferme-croix-blanche.git`, branche : **`hostinger`**, dossier : laisser vide (racine de `public_html`). `public_html` doit être vide avant le premier déploiement.
+3. Activer le **déploiement automatique** et copier l'URL du webhook fournie par Hostinger dans GitHub → *Settings* → *Webhooks* → *Add webhook*.
+
+Le dépôt étant public, aucune clé n'est nécessaire.
+
+### Option B – Envoi manuel
+
+1. `npm run build`
+2. hPanel → *Gestionnaire de fichiers* → `public_html` : téléverser **le contenu** du dossier `dist/` (y compris `.htaccess`, fichier caché).
+
+### Ensuite
+
+- hPanel → *Sécurité* → *SSL* : installer le certificat gratuit (le `.htaccess` force `https://www.`).
+- Si le domaine est encore chez Local.fr, pointer ses DNS vers Hostinger.
+- Envoyer une demande test depuis le formulaire.
 
 ## Images
 
-Les photos et le logo sont pour l'instant chargés depuis l'ancien site Local.fr. **Si l'abonnement Local.fr est résilié, elles disparaîtront.** Avant la résiliation :
-
-1. récupérer les images (fichiers d'origine auprès de la ferme, ou clic droit → *Enregistrer l'image* sur l'ancien site) ;
-2. les placer dans `assets/img/` ;
-3. remplacer dans `index.html`, `assets/js/main.js` et `assets/css/style.css` l'adresse
-   `https://local-fr-public.s3.eu-west-3.amazonaws.com/prod/webtool/userfiles/115601/` par `assets/img/` (en gardant les mêmes noms de fichiers, ou en les adaptant).
-
-## Mise à jour des contenus
-
-- **Dates de vente** : tableau `V` dans `assets/js/main.js` (la prochaine vente et le compte à rebours se calculent seuls).
-- **Tarifs** : objet `T` dans `assets/js/main.js`.
-- **Pension, textes** : directement dans `index.html`.
+Les photos et le logo sont encore chargés depuis l'ancien site Local.fr (`IMG` dans `src/data.js`). **Si l'abonnement Local.fr est résilié, elles disparaîtront.** Pour les héberger avec le site : les placer dans `public/img/` (mêmes noms de fichiers) et remplacer la valeur de `IMG` par `'img/'`.

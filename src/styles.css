@@ -546,3 +546,8 @@ footer{background:var(--nuit);color:rgba(255,255,255,.6);overflow:hidden}
 }
 
 .err{background:#fbeceb;color:#8a2a1f;border-radius:12px;padding:16px 18px;font-weight:600}
+
+/* Carrousel animé par motion : les ressorts remplacent les transitions CSS */
+.fc-chip,.fc-card{transition:none}
+.fc-cap{opacity:1;transform:none;transition:none}
+.timeline ol li{list-style:none}
