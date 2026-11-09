@@ -1,32 +1,24 @@
 import { SiteProvider } from './store'
-import useScrollFx from './hooks/useScrollFx'
-import Loader from './components/Loader'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import { Marquee, Ferme, Heritage, Pension, Engagements } from './components/Sections'
-import Ventes, { Viandes } from './components/Ventes'
-import Contact from './components/Contact'
-import { AppBar, Footer, OrderSheet, Toast } from './components/Chrome'
+import { Header, Hero, Visit, Viandes, Tarifs, Manifeste, Ferme, Pension, Commande, Close, FooterVisit, usePlaceFx } from './components/Place'
+import { AppBar, OrderSheet, Toast } from './components/Chrome'
 
 function Page() {
-  useScrollFx()
+  usePlaceFx()
   return (
     <>
-      <div className="grain" aria-hidden="true" />
-      <Loader />
       <Header />
-      <main id="accueil">
+      <main id="contenu">
         <Hero />
-        <Marquee />
-        <Ferme />
-        <Heritage />
+        <Visit />
         <Viandes />
-        <Ventes />
+        <Tarifs />
+        <Manifeste />
+        <Ferme />
         <Pension />
-        <Engagements />
-        <Contact />
+        <Commande />
+        <Close />
       </main>
-      <Footer />
+      <FooterVisit />
       <AppBar />
       <Toast />
       <OrderSheet />

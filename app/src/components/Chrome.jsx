@@ -1,26 +1,7 @@
 import { useEffect, useRef } from 'react'
-import { FACEBOOK, MAPS, TEL, TEL_HREF } from '../data'
+import { TEL, TEL_HREF } from '../data'
 import { ITEMS, useSite } from '../store'
 import { CartIcon, HomeIcon, PhoneIcon } from '../icons'
-
-export function Footer({ base = '' }) {
-  return (
-    <footer>
-      <div className="wrap">
-        <div className="foot-top">
-          <div style={{ maxWidth: '34ch' }}>
-            <h4>La Ferme de la Croix Blanche</h4>
-            <p style={{ color: 'rgba(255,255,255,.6)' }}>Exploitation familiale à Drocourt. Vente directe de viandes et d'œufs fermiers, pension familiale de chevaux.</p>
-          </div>
-          <nav><h4>Navigation</h4><a href={base + '#ferme'}>La ferme</a><a href={base + '#viandes'}>Nos viandes</a><a href={base + '#tarifs'}>Ventes &amp; tarifs</a><a href={base + '#pension'}>Pension chevaux</a></nav>
-          <nav><h4>Contact</h4><a href={TEL_HREF}>{TEL}</a><a href={FACEBOOK} target="_blank" rel="noopener">Facebook</a><a href={MAPS} target="_blank" rel="noopener">Google Maps</a></nav>
-        </div>
-        <div className="word" aria-hidden="true">Croix <em>Blanche</em></div>
-        <div className="legal"><span>© {new Date().getFullYear()} La Ferme de la Croix Blanche · SCEA Rosentritt</span><span className="legal-links"><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a></span></div>
-      </div>
-    </footer>
-  )
-}
 
 // Compteur qui rebondit quand on ajoute un article
 function Count({ n }) {
@@ -63,7 +44,7 @@ export function OrderSheet() {
     <>
       <div className={'dock' + (count > 0 && !sheetOpen ? ' show' : '')} role="region" aria-label="Ma liste de commande">
         <span>Ma liste <Count n={count} /></span>
-        <button className="btn" type="button" onClick={() => setSheetOpen(true)}>Voir et commander</button>
+        <button className="btn btn--primary" type="button" onClick={() => setSheetOpen(true)}>Voir ma liste</button>
       </div>
 
       <div className="scrim" onClick={() => setSheetOpen(false)} />
@@ -91,7 +72,7 @@ export function OrderSheet() {
         {count > 0 && (
           <div className="sh-foot">
             <p>Les quantités sont en nombre de pièces ou de colis, comme indiqué au tarif. Le prix final dépend du poids pesé.</p>
-            <div className="row2"><button className="btn dark" type="button" onClick={attachToForm}>Joindre à ma demande</button></div>
+            <button className="btn btn--primary btn--full" type="button" onClick={attachToForm}>Joindre à ma commande</button>
             <button className="linkbtn" type="button" onClick={clear}>Vider la liste</button>
           </div>
         )}

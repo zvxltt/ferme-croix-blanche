@@ -62,7 +62,7 @@ export default function FeatureCarousel() {
 
   return (
     <div
-      ref={root} className="fc rv" aria-roledescription="carrousel" aria-label="Nos produits"
+      ref={root} className="fc" aria-roledescription="carrousel" aria-label="Nos produits"
       onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}
       onFocus={() => setIsPaused(true)} onBlur={() => setIsPaused(false)}
     >
@@ -111,8 +111,7 @@ export default function FeatureCarousel() {
                 transition={{ type: 'spring', stiffness: 260, damping: 25, mass: 0.8 }}
               >
                 <img src={IMG + f.img} alt={f.label} loading="lazy" />
-                <div className="fc-live"><i /><span>Ferme de la Croix Blanche</span></div>
-                <AnimatePresence>
+                                <AnimatePresence>
                   {isActive && (
                     <motion.div
                       className="fc-cap"
